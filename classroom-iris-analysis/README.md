@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# Classroom Iris Analysis
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An Expo-based mobile application for classroom attention analysis using MediaPipe's iris tracking capabilities.
 
-## Get started
+## How to Build the APK (Android)
 
-1. Install dependencies
+These instructions are for building the Android APK on a Windows machine.
 
-   ```bash
-   npm install
-   ```
+### Prerequisites
 
-2. Start the app
+1.  **Install Node.js and npm:**
+    *   Download and install the LTS version of Node.js from [https://nodejs.org/](https://nodejs.org/). npm will be installed automatically.
+    *   Verify the installation by running `node -v` and `npm -v` in your command prompt.
 
-   ```bash
-   npx expo start
-   ```
+2.  **Install EAS CLI:**
+    *   Install the Expo Application Services (EAS) command-line tool globally:
+        ```bash
+        npm install -g eas-cli
+        ```
 
-In the output, you'll find options to open the app in a
+3.  **Create and Log in to an Expo Account:**
+    *   Sign up for a free account at [https://expo.dev/signup](https://expo.dev/signup).
+    *   Log in to your account from the command line:
+        ```bash
+        eas login
+        ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Project Setup
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Clone or download the project code.**
 
-## Get a fresh project
+2.  **Navigate to the project directory:**
+    ```bash
+    cd path\to\your\project\classroom-iris-analysis
+    ```
 
-When you're ready, run:
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-```bash
-npm run reset-project
-```
+### Build Process
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1.  **Configure EAS Build:**
+    *   This command will create an `eas.json` file in your project.
+        ```bash
+        eas build:configure
+        ```
+    *   You can accept the default settings.
 
-## Learn more
+2.  **Start the build:**
+    *   This command will start the build process for Android on Expo's servers.
+        ```bash
+        eas build -p android
+        ```
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3.  **Download the APK:**
+    *   Once the build is complete, the command line will provide a URL to the build details page.
+    *   Open the URL in your browser and download the `.apk` file.
